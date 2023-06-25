@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import classes from "../styles/layouts/BlogPost.module.scss";
 
 type Props = CollectionEntry<"posts">["data"];
 
@@ -11,26 +12,16 @@ const { title, description, pubDate, updatedDate, heroImage, tags } =
 
 <BaseLayout>
 	<style>
-		.title {
-			font-size: 2em;
-			margin: 0.25em 0 0;
-		}
-		hr {
-			border-top: 1px solid #ddd;
-			margin: 1rem 0;
-		}
-		.last-updated-on {
-			font-style: italic;
-		}
+		
 	</style>
 	<article>
-		<h1 class="post-title">{title}</h1>
+		<h1 class={classes["post-title"]}>{title}</h1>
 		<div class="post-info">
 			<img src="" alt="" class="post-author-img" /><span class="post-author-name"></span>
 			<FormattedDate date={pubDate} />
 		</div>
 		{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-		<hr />
+		<!-- <hr /> -->
 		<slot />
 		<p class="post-tags">Tagged as:
 		{tags && tags.map(tag => <a href={`/tags/${tag}`}>{tag}</a>)}</p>

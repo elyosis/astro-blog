@@ -1,19 +1,8 @@
 ---
+import classes from "../styles/components/Footer.module.scss";
 const today = new Date();
 ---
 
-<footer>
+<footer class={classes.footer}>
 	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
 </footer>
-<style lang="scss">
-	@use "../styles/_variables.scss";
-
-	footer {
-		background-color: variables.$color-accent-secondary;
-		color: variables.$color-main-dark;
-		padding: 25px;
-		margin: 0;
-		text-align: center;
-		align-self: stretch;
-	}
-</style>

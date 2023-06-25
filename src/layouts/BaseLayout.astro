@@ -3,6 +3,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "./../consts";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import classes from "../styles/layouts/BaseLayout.module.scss";
 ---
 
 <html lang="en">
@@ -12,7 +13,7 @@ import Footer from "../components/Footer.astro";
 
   <body>
     <Header />
-    <main>
+    <main class={classes.main}>
       <slot />
     </main>
     <Footer />

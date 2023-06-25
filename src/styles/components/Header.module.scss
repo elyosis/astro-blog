@@ -1,0 +1,30 @@
+@use "../_variables.scss";
+
+	.header {
+		margin: 0 0 4rem 0;
+		padding: 2rem;
+		// padding-bottom: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: linear-gradient(153deg, rgba(206,211,215,0.9261905445772058) 0%, rgba(228,186,190,0.9878151944371498) 100%, transparent), variables.$color-accent-secondary;
+		color: variables.$color-main-dark;
+	}
+
+	.nav {
+		display: flex;
+		justify-content: space-around;
+		gap: 2rem;
+
+		a {
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+			color: variables.$color-main-dark;
+		}
+	}
+
+	.header-title {
+		margin: 0.5em 0;
+	}
