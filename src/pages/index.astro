@@ -9,6 +9,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style lang="scss">
+			@use "../styles/_variables.scss";
+
+			// div  {
+			// 	height: 200px;
+			// 	width: 200px;
+			// 	border: 5px solid;
+			// 	border-image: linear-gradient(153deg, rgba(206,211,215,0.9261905445772058) 0%, rgba(228,186,190,0.9878151944371498) 100%) 1;
+			// 	background-color: variables.$color-secondary-dark;
+			// }
+		</style>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
@@ -19,6 +30,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
 				a personal website, blog, or portfolio with Astro.
 			</p>
+
 			<p>
 				This template comes with a few integrations already configured in your
 				<code>astro.config.mjs</code> file. You can customize your setup with

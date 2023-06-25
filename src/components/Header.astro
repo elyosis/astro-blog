@@ -1,24 +1,47 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
-<header>
+<header class="header">
 	<h2>
 		{SITE_TITLE}
 	</h2>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/posts">Blog</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
+		<HeaderLink href="/archive">Archive</HeaderLink>
 	</nav>
 </header>
-<style>
+<style lang="scss">
+	@use "../styles/_variables.scss";
+
 	header {
-		margin: 0em 0 2em;
+		margin: 0 0 4rem 0;
+		padding: 2rem;
+		// padding-bottom: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: linear-gradient(153deg, rgba(206,211,215,0.9261905445772058) 0%, rgba(228,186,190,0.9878151944371498) 100%, transparent), variables.$color-accent-secondary;
+		color: variables.$color-main-dark;
 	}
+
+	nav {
+		display: flex;
+		justify-content: space-around;
+		gap: 2rem;
+	}
+
+	nav a {
+		text: {
+			decoration: none;
+			transform: uppercase;
+		}
+		color: variables.$color-main-dark;
+	}
+
 	h2 {
 		margin: 0.5em 0;
 	}

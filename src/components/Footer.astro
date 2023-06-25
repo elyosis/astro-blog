@@ -5,9 +5,15 @@ const today = new Date();
 <footer>
 	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
 </footer>
-<style>
+<style lang="scss">
+	@use "../styles/_variables.scss";
+
 	footer {
+		background-color: variables.$color-accent-secondary;
+		color: variables.$color-main-dark;
 		padding: 25px;
+		margin: 0;
 		text-align: center;
+		align-self: stretch;
 	}
 </style>
