@@ -1,0 +1,12 @@
+@use "../variables.scss";
+
+.post-item {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: variables.$color-secondary-dark;
+  border: 3px solid variables.$color-accent-secondary;
+  border-radius: 25px;
+  box-shadow: 0 0 10px 3px variables.$color-accent-secondary;
+  max-width: 70rem;
+  justify-self: center;
+}

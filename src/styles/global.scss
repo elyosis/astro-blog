@@ -19,9 +19,7 @@ body {
 	height: 100%;
 	display: grid;
 	grid-template-rows: 2fr 7fr minmax(max-content, auto);
-	grid-template-areas: "header"
-											 "main"
-											 "footer";
+	align-items: center;
 	margin: 0;
 	background-color: variables.$color-main-dark;
 	word-wrap: break-word;
