@@ -1,12 +1,15 @@
 @use "../_variables.scss";
 
 	.header {
-		margin: 0 0 4rem 0;
+		margin: 2rem;
 		padding: 2rem;
+		border-radius: 25px;
+		box-shadow: 0px 0px 15px variables.$color-accent-primary;
 		// padding-bottom: 4rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		grid-area: "header";
 		background: linear-gradient(153deg, rgba(206,211,215,0.9261905445772058) 0%, rgba(228,186,190,0.9878151944371498) 100%, transparent), variables.$color-accent-secondary;
 		color: variables.$color-main-dark;
 	}

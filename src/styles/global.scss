@@ -19,9 +19,10 @@ body {
 	height: 100%;
 	display: grid;
 	grid-template-rows: 2fr 7fr minmax(max-content, auto);
+	grid-template-areas: "header"
+											 "main"
+											 "footer";
 	margin: 0;
-	// padding: 20px;
-	// max-width: 65rem;
 	background-color: variables.$color-main-dark;
 	word-wrap: break-word;
 	overflow-wrap: break-word;

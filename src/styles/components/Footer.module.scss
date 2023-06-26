@@ -5,6 +5,8 @@
 		color: variables.$color-main-dark;
 		padding: 25px;
 		margin: 0;
+		box-shadow: 0 0 15px variables.$color-accent-secondary;
+		grid-area: footer;
 		text-align: center;
 		align-self: stretch;
 	}
