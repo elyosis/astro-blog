@@ -1,8 +1,11 @@
 import { useState } from "react";
 import FilteredPosts from "./FilteredPosts";
+import classes from "../styles/components/ArchiveFilter.module.scss";
+import ArchiveTag from "./ArchiveTag";
 
-const ArchivePanel = (props) => {
-  const [filteredTag, setFilteredTag] = useState();
+const ArchiveFilter = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [filteredTag, setFilteredTag] = useState("");
 
   const uniqueTags = [
     ...new Set(
@@ -17,25 +20,29 @@ const ArchivePanel = (props) => {
     post.tags.includes(filteredTag)
   );
 
-  const buttonHandler = (event) => {
-    setFilteredTag(event.target.name);
+  const dropdownHandler = () => {
+    setIsVisible((prevState) => !prevState);
+    setFilteredTag("");
+  };
+
+  const filterHandler = (tag) => {
+    setFilteredTag(tag);
   };
 
   return (
-    <>
-      <h2>Select a tag to filter:</h2>
-      <div>
-        {uniqueTags.map((tag) => (
-          <button type="button" name={tag} onClick={buttonHandler}>
-            {tag}
-          </button>
-        ))}
+    <div className={`${classes["archive-container"]} ${isVisible ? classes.visible : ""}`}>
+      <div className={classes["archive-dropdown"]}>
+        <h2>Select a tag to filter:</h2>
+        <button onClick={dropdownHandler}>&</button>
       </div>
-      <div>
-        <FilteredPosts posts={filteredPosts} />
+      <div className={classes["archive-tag-list"]}>
+        {uniqueTags.map(tag => 
+          <ArchiveTag key={tag} name={tag} onFilter={filterHandler} />
+        )}
       </div>
-    </>
+      <FilteredPosts posts={filteredPosts} />
+    </div>
   );
 };
 
-export default ArchivePanel;
+export default ArchiveFilter;

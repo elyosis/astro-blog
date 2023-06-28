@@ -1,0 +1,45 @@
+@use "../variables";
+
+.archive-container {
+  width: 70%;
+  margin-bottom: 3rem;
+  border-radius: 25px;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas: "heading"
+                       "tags"
+                       "posts";
+}
+
+.archive-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: variables.$color-accent-secondary;
+  color: variables.$color-secondary-dark;
+  padding: 0.2rem 1rem;
+  border-radius: 25px 25px 0 0;
+  box-shadow: 0 0px 10px 3px variables.$color-accent-secondary;
+}
+
+h2 {
+  grid-area: "heading";
+}
+
+.archive-tag-list {
+  background-color: variables.$color-secondary-dark;
+  grid-area: "tags";
+  justify-self: center;
+  display: none;
+}
+
+.archive-container.visible {
+  background-color: variables.$color-secondary-dark;
+}
+
+.archive-container.visible > .archive-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}

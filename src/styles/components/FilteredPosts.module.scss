@@ -1,0 +1,9 @@
+.archive-filtered-posts {
+  padding: 2rem 1rem;
+  width: 100%;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 15rem);
+  gap: 1rem;
+  justify-content: center;
+}
