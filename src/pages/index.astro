@@ -15,8 +15,9 @@ const posts = (await getCollection("posts")).sort(
 		posts.map((post) => (
 			<PostPreviewIndex
 				title={post.data.title}
+				summary={post.data.summary}
 				pubDate={post.data.pubDate}
-				slug={post.slug}
+				url={`/posts/${post.slug}`}
 				heroImage={post.data.heroImage}
 				tags={post.data.tags}
 			/>

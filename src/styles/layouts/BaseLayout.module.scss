@@ -1,6 +1,11 @@
-.main {
-  padding: 2rem 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@use "../_mixins";
+
+.main-home {
+  @include mixins.base-layout;
+}
+
+.main-archive {
+  @include mixins.base-layout;
+  height: 100%;
+  justify-content: start;
 }

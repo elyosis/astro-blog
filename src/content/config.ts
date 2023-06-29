@@ -14,6 +14,7 @@ const posts = defineCollection({
 		heroImage: z.string().optional(),
 		tags: z.array(z.string()),
 		relatedPosts: z.array(reference('blog')).optional(),
+		url: z.string().optional()
 	}),
 });
 

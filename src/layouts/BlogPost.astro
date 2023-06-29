@@ -6,14 +6,12 @@ import classes from "../styles/layouts/BlogPost.module.scss";
 
 type Props = CollectionEntry<"posts">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, tags } =
+// #TODO: look up default values to see if this is correct:
+const { title, summary, pubDate, heroImage, tags, relatedPosts = null } =
 	Astro.props;
 ---
 
 <BaseLayout>
-	<style>
-		
-	</style>
 	<article>
 		<h1 class={classes["post-title"]}>{title}</h1>
 		<div class="post-info">

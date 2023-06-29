@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ArchivePanel from "../../components/ArchiveFilter";
-import classes from "../styles/pages/index.module.scss";
+import ArchiveFilter from "../../components/ArchiveFilter";
+import classes from "../../styles/pages/archive/index.module.scss";
 
 import { getCollection } from "astro:content";
 
@@ -18,5 +18,5 @@ const posts = (await getCollection("posts")).map((post) => {
 ---
 
 <BaseLayout>
-	<ArchivePanel client:load postsCollection={posts} />
+	<ArchiveFilter class={classes["archive-area"]} client:load postsCollection={posts} />
 </BaseLayout>

@@ -4,6 +4,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import classes from "../styles/layouts/BaseLayout.module.scss";
+
+const pathname: string = Astro.url.pathname;
 ---
 
 <html lang="en">
@@ -13,7 +15,11 @@ import classes from "../styles/layouts/BaseLayout.module.scss";
 
   <body>
     <Header />
-    <main class={classes.main}>
+    <main
+      class={pathname === "/archive"
+        ? classes["main-archive"]
+        : classes["main-home"]}
+    >
       <slot />
     </main>
     <Footer />
