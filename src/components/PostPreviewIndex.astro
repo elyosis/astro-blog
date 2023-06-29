@@ -1,11 +1,9 @@
 ---
 import classes from "../styles/components/PostPreviewIndex.module.scss";
-import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<"posts">["data"];
 
-const { title, summary, pubDate, heroImage, tags, url } = Astro.props;
+const { title, summary, pubDate, heroImage, tags, slug } = Astro.props;
 ---
 
   <div class={classes["post-item"]}>
@@ -17,7 +15,7 @@ const { title, summary, pubDate, heroImage, tags, url } = Astro.props;
     </div>
     {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
     <p>{summary}</p>
-    <a href={`/posts/${url}/`}>Continue reading...</a>
+    <a href={`${slug}`}>Continue reading...</a>
     <hr />
     <p class="post-tags">
       Tagged as:
