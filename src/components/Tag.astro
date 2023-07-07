@@ -1,9 +1,9 @@
 ---
 import classes from "../styles/components/Tag.module.scss";
 
-const { tag, buttonHandler } = Astro.props;
+const {tag} = Astro.props;
 ---
 
-<button type="button" name={tag} class={classes.tag} onclick={buttonHandler}
-  ><a class={classes["tag-link"]} href=`/tags/${tag}`>{tag}</a></button
+<span class={classes.tag}
+  ><a href=`/tags/${tag}`>{tag}</a></span
 >
