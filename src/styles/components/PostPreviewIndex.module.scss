@@ -1,13 +1,74 @@
 @use "../variables.scss";
 
-.post-item {
-  padding: 2rem;
-  margin: 2rem;
-  width: 70%;
-  background-color: variables.$color-secondary-dark;
-  border: 3px solid variables.$color-accent-secondary;
-  border-radius: 25px;
-  box-shadow: 0 0 10px 3px variables.$color-accent-secondary;
-  max-width: 70rem;
-  justify-self: center;
+.post- {
+  &item {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    margin: 2rem;
+    width: 70%;
+    background-color: variables.$color-secondary-dark;
+    border: 3px solid variables.$color-accent-secondary;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 3px variables.$color-accent-secondary;
+    max-width: 70rem;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+      margin-block: 0.5rem;
+    }
+  }
+
+  &title {
+    font: {
+      family: "Sora Variable", sans-serif;
+      weight: 500;
+      size: 2rem;
+    }
+    margin-block: 0.2rem;
+    padding-block: 0;
+    color: variables.$color-accent-primary;
+  }
+
+  &info {
+    flex: 3 1 0;
+    // font-size: 1rem;
+    margin-left: 1rem;
+
+    // img {
+    //   border-radius: 50%;
+    //   vertical-align: bottom;
+    // }
+
+    time {
+      font-style: italic;
+    }
+  }
+
+  // &author-name {
+  //   font-weight: 700;
+  // }
+
+  &img {
+    flex: 1 1 0;
+
+    img {
+      aspect-ratio: 4/3;
+      min-width: 225px;
+      object-fit: cover;
+    }
+  }
+
+  &tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem;
+
+    span {
+      padding-top: 0;
+    }
+  }
 }
