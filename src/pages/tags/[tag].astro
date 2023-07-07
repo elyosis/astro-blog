@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostPreviewIndex from "../../components/PostPreviewIndex.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <style lang="scss">
+    @use "../../styles/variables";
+    
+    p {
+      font-size: 2rem;
+    }
+
+    span {
+      color: variables.$color-main-dark;
+      background-color: variables.$color-accent-secondary;
+      border-radius: 5px;
+      padding: 0.3rem;
+    }
+  </style>
+
+  <p>Posts tagged as <span>{tag}</span></p>
+  {
+    posts.map(
+      (post: {
+        data: {
+          title: any;
+          author: any;
+          summary: any;
+          pubDate: any;
+          heroImage: any;
+          heroImageAltText: any;
+          tags: any;
+        };
+        slug: any;
+      }) => (
+        <PostPreviewIndex
+          title={post.data.title}
+          author={post.data.author}
+          summary={post.data.summary}
+          pubDate={post.data.pubDate}
+          slug={`/posts/${post.slug}`}
+          heroImage={post.data.heroImage}
+          heroImageAltText={post.data.heroImageAltText}
+          tags={post.data.tags}
+        />
+      )
+    )
+  }
+</BaseLayout>
