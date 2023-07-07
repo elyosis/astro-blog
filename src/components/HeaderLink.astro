@@ -1,22 +1,31 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<"a">;
 
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
 
-<style>
+<style lang="scss">
+	@use "../styles/variables.scss";
+
 	/* Has to stay here as it won't have enough specificity to be applied otherwise */
-		a.active {
-			font-weight: 700;
-			text-decoration: underline;
-		}
+	a.active {
+		font-weight: 700;
+		/* text-decoration: underline; */
+		border-block-end: 3px solid;
+		border-image-source: radial-gradient(
+				circle at bottom,
+				variables.$color-main-dark,
+				transparent 80%
+			);
+		border-image-slice: 1;
+	}
 </style>
