@@ -1,0 +1,14 @@
+@use "../variables";
+@use "../_mixins";
+
+.about {
+  @include mixins.main-text;
+
+  img {
+    margin: 2.5rem;
+    border: 5px solid variables.$color-accent-secondary;
+    border-radius: 50%;
+		box-shadow: 0px 0px 15px variables.$color-accent-primary;
+    float: left;
+  }
+}
