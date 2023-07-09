@@ -2,26 +2,34 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Tag from "../components/Tag.astro";
 import classes from "../styles/layouts/BlogPost.module.scss";
 
 type Props = CollectionEntry<"posts">["data"];
 
-// #TODO: look up default values to see if this is correct:
-const { title, summary, pubDate, heroImage, tags, relatedPosts = null } =
-	Astro.props;
+const {
+	title,
+	author,
+	summary,
+	pubDate,
+	heroImage,
+	heroImageAltText,
+	tags,
+} = Astro.props;
 ---
 
 <BaseLayout>
 	<article>
 		<h1 class={classes["post-title"]}>{title}</h1>
-		<div class="post-info">
-			<img src="" alt="" class="post-author-img" /><span class="post-author-name"></span>
-			<FormattedDate date={pubDate} />
-		</div>
-		{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-		<!-- <hr /> -->
+		<p class={classes["post-date"]}>Published on <FormattedDate date={pubDate} /></p>
+		<p class={classes["post-summary"]}>{summary}</p>
+		{heroImage && <img src={heroImage} alt={heroImageAltText} />}
+		<hr />
 		<slot />
-		<p class="post-tags">Tagged as:
-		{tags && tags.map(tag => <a href={`/tags/${tag}`}>{tag}</a>)}</p>
+		<hr />
+		<p class={classes["post-tags"]}>
+			Tagged as:
+			{tags && tags.map((tag) => <Tag tag={tag}>{tag}</h>)}
+		</p>
 	</article>
 </BaseLayout>

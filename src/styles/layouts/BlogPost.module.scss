@@ -1,9 +1,50 @@
-.post-title {
-  font-size: 2em;
-  margin: 0.25em 0 0;
+@use "../variables";
+@use "../mixins";
+
+article {
+  @include mixins.main-text;
+}
+
+.post- {
+  &title {
+    color: variables.$color-accent-primary;
+    font-size: 2.5em;
+    margin-block: 0.2rem;
+  }
+
+  &date {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-block: 0;
+  }
+
+  &summary {
+    font-size: 0.9rem;
+    font-family: "Sora Variable", sans-serif;
+  }
+}
+
+time {
+  font-weight: bold;
+}
+
+img  {
+  margin: 2rem auto;
+  display: block;
 }
 
 hr {
-  border-top: 1px solid #ddd;
-  margin: 1rem 0;
+  border-block-start: 1px solid;
+  border-image-source: linear-gradient(90deg, rgba(206,211,215,0.9261905445772058) 0%, rgba(228,186,190,0.9878151944371498) 100%);
+  border-image-slice: 1;
+  margin-block: 2rem;
+}
+
+.post-tags {
+  margin-block: 2rem;
+  font-weight: bold;
+  
+  span {
+    margin: 0 0.2rem;
+  }
 }
