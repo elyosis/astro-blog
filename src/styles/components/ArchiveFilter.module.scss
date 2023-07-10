@@ -8,6 +8,7 @@
   gap: 2rem;
   grid-template-areas: "heading"
                        "tags"
+                       "posts"
                        "posts";
 }
 
@@ -35,11 +36,21 @@ h2 {
 
 .archive-container.visible {
   background-color: variables.$color-secondary-dark;
+
+  & > p {
+    margin: 0 auto;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  & > .archive-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
 
-.archive-container.visible > .archive-tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
+.tag-text {
+  color: variables.$color-accent-primary;
 }

@@ -30,16 +30,31 @@ const ArchiveFilter = (props) => {
   };
 
   return (
-    <div className={`${classes["archive-container"]} ${isVisible ? classes.visible : ""}`}>
+    <div
+      className={`${classes["archive-container"]} ${
+        isVisible ? classes.visible : ""
+      }`}
+    >
       <div className={classes["archive-dropdown"]}>
         <h2>Select a tag to filter:</h2>
         <button onClick={dropdownHandler}>&</button>
       </div>
       <div className={classes["archive-tag-list"]}>
-        {uniqueTags.map(tag => 
-          <ArchiveTag key={tag} name={tag} onFilter={filterHandler} />
-        )}
+        {uniqueTags.map((tag) => (
+          <ArchiveTag
+            key={tag}
+            name={tag}
+            filteredTag={filteredTag}
+            onFilter={filterHandler}
+          />
+        ))}
       </div>
+      {filteredTag && (
+        <p>
+          Posts tagged as{" "}
+          <span className={classes["tag-text"]}>{filteredTag}</span>:
+        </p>
+      )}
       <FilteredPosts posts={filteredPosts} />
     </div>
   );
