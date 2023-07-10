@@ -6,7 +6,6 @@
 		padding: 2rem;
 		border-radius: 25px;
 		box-shadow: 0px 0px 15px variables.$color-accent-primary;
-		// padding-bottom: 4rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -26,6 +25,10 @@
 			}
 			color: variables.$color-main-dark;
 			padding: 2px 5px;
+
+			 &:hover {
+				color: variables.$color-accent-primary-darker;
+			 }
 		}
 	}
 

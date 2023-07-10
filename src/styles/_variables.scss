@@ -5,6 +5,7 @@ $color-main-light: #fcf1ef;
 $color-secondary-dark: color.scale($color: $color-main-dark, $lightness: -15%);
 $color-secondary-light: color.scale($color: $color-main-light, $lightness: -15%);
 $color-accent-primary: #e4babe;
+$color-accent-primary-darker: color.scale($color: $color-accent-primary, $lightness: -25%);
 $color-accent-secondary: #ced3d7;
 $color-accent-hover: color.scale($color: $color-accent-primary, $lightness: 50%);
 

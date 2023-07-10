@@ -27,6 +27,10 @@
     &:hover {
       box-shadow: 0 0 15px 6px variables.$color-accent-secondary;
     }
+
+    & a:hover {
+      color: variables.$color-main-light;
+    }
   }
 
   a {

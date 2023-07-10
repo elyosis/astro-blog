@@ -7,4 +7,12 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 10px;
+
+  &:hover {
+    transform: scale(110%);
+  }
+}
+
+.active {
+  background-color: variables.$color-accent-secondary;
 }
