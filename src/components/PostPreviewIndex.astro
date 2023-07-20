@@ -19,9 +19,8 @@ const {
   {
     heroImage && (
       <div class={classes["post-img"]}>
-        {/* #TODO: change hero images for better placeholders*/}
         <a href={`${slug}`}>
-          <img src="https://placehold.co/300x200" alt={heroImageAltText} />
+          <img src={heroImage} width="300" height="225" alt={heroImageAltText} />
         </a>
       </div>
     )

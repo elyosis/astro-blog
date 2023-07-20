@@ -42,14 +42,17 @@
 
   &img {
     flex: 1 1 0;
-
+    
     a {
       margin: 0;
     }
-
+    
     img {
       min-width: 225px;
       display: block;
+      border-radius: 5px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
     }
   }
 
