@@ -1,18 +1,26 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.scss';
+import "../styles/global.scss";
+// Supports weights 100-800
+import "@fontsource-variable/sora";
+import "@fontsource/sarabun/400.css";
+import "@fontsource/sarabun/400-italic.css";
+import "@fontsource/sarabun/700.css";
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-// TODO: change title + desc. in consts.ts, and add new image
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+const {
+  title,
+  description,
+  image = "https://fastly.picsum.photos/id/180/1280/720.jpg",
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -42,3 +50,7 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/75fe708dfd.js" crossorigin="anonymous"
+></script>
