@@ -39,7 +39,7 @@ const ArchiveFilter = (props) => {
         <h2>Select a tag to filter:</h2>
         <button type="button" onClick={dropdownHandler}>
           <i
-            class={`fa-solid fa-angle-down fa-2xl ${
+            className={`fa-solid fa-angle-down fa-2xl ${
               isVisible ? `fa-flip-vertical` : ""
             }`}
           ></i>
