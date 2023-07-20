@@ -51,9 +51,14 @@ img {
 }
 
 blockquote {
-	border: 1px solid #999;
-	color: #222;
+	border: 1px solid variables.$color-accent-primary;
+	color: variables.$color-accent-secondary;
 	padding: 2px 0px 2px 20px;
 	margin: 0px;
 	font-style: italic;
+}
+
+mark {
+	background-color: variables.$color-accent-primary;
+	color: variables.$color-secondary-dark;
 }
