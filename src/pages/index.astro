@@ -19,10 +19,12 @@ const posts = (await getCollection("posts"))
 		posts.map((post) => (
 			<PostPreviewIndex
 				title={post.title}
+				author={post.author}
 				summary={post.summary}
 				pubDate={post.pubDate}
 				slug={`/posts/${post.slug}`}
 				heroImage={post.heroImage}
+				heroImageAltText={post.heroImageAltText}
 				tags={post.tags}
 			/>
 		))
