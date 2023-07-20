@@ -18,14 +18,26 @@
   justify-content: space-between;
   background-color: variables.$color-accent-secondary;
   color: variables.$color-secondary-dark;
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 1.3rem;
   border-radius: 25px 25px 0 0;
   box-shadow: 0 0px 10px 3px variables.$color-accent-secondary;
+  
+  h2 {
+    grid-area: "heading";
+  }
+
+  button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  i {
+    color: variables.$color-secondary-dark;
+    transition: all 0.3s ease;
+  }
 }
 
-h2 {
-  grid-area: "heading";
-}
 
 .archive-tag-list {
   background-color: variables.$color-secondary-dark;

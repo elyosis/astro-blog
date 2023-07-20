@@ -37,7 +37,13 @@ const ArchiveFilter = (props) => {
     >
       <div className={classes["archive-dropdown"]}>
         <h2>Select a tag to filter:</h2>
-        <button onClick={dropdownHandler}>&</button>
+        <button type="button" onClick={dropdownHandler}>
+          <i
+            class={`fa-solid fa-angle-down fa-2xl ${
+              isVisible ? `fa-flip-vertical` : ""
+            }`}
+          ></i>
+        </button>
       </div>
       <div className={classes["archive-tag-list"]}>
         {uniqueTags.map((tag) => (
