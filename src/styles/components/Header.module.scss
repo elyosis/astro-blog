@@ -24,10 +24,11 @@
 				transform: uppercase;
 			}
 			color: variables.$color-main-dark;
-			padding: 2px 5px;
+			padding: 5px 10px;
 
 			 &:hover {
-				color: variables.$color-accent-primary-darker;
+				background-color: variables.$color-accent-hover;
+				border-radius: 7px;
 			 }
 		}
 	}

@@ -19,20 +19,5 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 	/* Has to stay here as it won't have enough specificity to be applied otherwise */
 	a.active {
 		font-weight: 700;
-		border-block-end: 3px solid;
-		border-image-source: radial-gradient(
-				circle at bottom,
-				variables.$color-main-dark,
-				transparent 80%
-			);
-		border-image-slice: 1;
-
-		&:hover {
-			border-image-source: radial-gradient(
-				circle at bottom,
-				variables.$color-accent-primary-darker,
-				transparent 80%
-			);
-		}
 	}
 </style>
