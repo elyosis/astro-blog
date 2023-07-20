@@ -11,6 +11,11 @@
 		justify-content: space-between;
 		background: linear-gradient(153deg, rgba(206,211,215,0.9261905445772058) 0%, rgba(228,186,190,0.9878151944371498) 100%, transparent), variables.$color-accent-secondary;
 		color: variables.$color-main-dark;
+
+		&-title {
+			font-weight: 800;
+			margin: 0.5em 0;
+		}
 	}
 
 	.nav {
@@ -31,8 +36,4 @@
 				border-radius: 7px;
 			 }
 		}
-	}
-
-	.header-title {
-		margin: 0.5em 0;
 	}

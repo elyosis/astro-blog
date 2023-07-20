@@ -10,6 +10,8 @@ article {
     color: variables.$color-accent-primary;
     font-size: 2.5em;
     margin-block: 0.2rem;
+    text-align: start;
+    line-height: normal;
   }
 
   &date {
