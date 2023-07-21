@@ -1,5 +1,6 @@
 @use "sass:color";
 
+// Colors
 $color-main-dark: #5e606c;
 $color-main-light: #fcf1ef;
 $color-secondary-dark: color.scale($color: $color-main-dark, $lightness: -15%);
@@ -9,3 +10,6 @@ $color-accent-primary-darker: color.scale($color: $color-accent-primary, $lightn
 $color-accent-secondary: #ced3d7;
 $color-accent-hover: color.scale($color: $color-accent-primary, $lightness: 50%);
 
+// Breakpoints
+$bp-tablet: 835px;
+$bp-mobile: 430px;
