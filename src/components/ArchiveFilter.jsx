@@ -23,6 +23,18 @@ const ArchiveFilter = (props) => {
   const dropdownHandler = () => {
     setIsVisible((prevState) => !prevState);
     setFilteredTag("");
+    const expandedState = document
+      .getElementById("tag-filter-toggle")
+      .getAttribute("aria-expanded");
+    if (expandedState === "true") {
+      document
+        .getElementById("tag-filter-toggle")
+        .setAttribute("aria-expanded", "false");
+    } else {
+      document
+        .getElementById("tag-filter-toggle")
+        .setAttribute("aria-expanded", "true");
+    }
   };
 
   const filterHandler = (tag) => {
@@ -37,7 +49,13 @@ const ArchiveFilter = (props) => {
     >
       <div className={classes["archive-dropdown"]}>
         <h2>Select a tag to filter:</h2>
-        <button type="button" onClick={dropdownHandler}>
+        <button
+          type="button"
+          id="tag-filter-toggle"
+          aria-controls="tag-filter-panel"
+          aria-expanded="false"
+          onClick={dropdownHandler}
+        >
           <i
             className={`fa-solid fa-angle-down fa-2xl ${
               isVisible ? `fa-flip-vertical` : ""
@@ -45,7 +63,7 @@ const ArchiveFilter = (props) => {
           ></i>
         </button>
       </div>
-      <div className={classes["archive-tag-list"]}>
+      <div id="tag-filter-panel" className={classes["archive-tag-list"]}>
         {uniqueTags.map((tag) => (
           <ArchiveTag
             key={tag}
