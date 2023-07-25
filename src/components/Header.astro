@@ -4,14 +4,65 @@ import { SITE_TITLE } from "../consts";
 import classes from "../styles/components/Header.module.scss";
 ---
 
-<header class={classes.header}>
-	<h2 class={classes["header-title"]}>
-		{SITE_TITLE}
-	</h2>
-	<nav class={classes.nav}>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="/archive">Archive</HeaderLink>
-	</nav>
-</header>
+<script>
+  const navigationToggle = document.getElementById("navigation-toggle");
+  const navigationMobile = document.getElementById("navigation-mobile");
+  navigationToggle?.addEventListener("click", () => {
+    const isNavExpanded = navigationToggle.getAttribute("aria-expanded");
+    if (isNavExpanded === "true") {
+      navigationToggle.setAttribute("aria-expanded", "false");
+    } else {
+      navigationToggle.setAttribute("aria-expanded", "true");
+    }
+    navigationMobile?.classList.toggle("expanded");
 
+  });
+</script>
+
+<header class={classes.header}>
+  <h2 class={classes["header-title"]}>
+    {SITE_TITLE}
+  </h2>
+  <button
+    class={classes["navigation-toggle"]}
+    id="navigation-toggle"
+    aria-controls="navigation-mobile"
+    aria-expanded="false"
+  >
+    <svg
+      fill="#50525c"
+      fill-opacity="0.8"
+      class={classes.hamburger}
+      viewBox="0 0 100 100"
+      width="60"
+    >
+      <rect class={classes.top} width="80" height="10" x="10" y="25" rx="5"
+      ></rect>
+      <rect class={classes.middle} width="80" height="10" x="10" y="45" rx="5"
+      ></rect>
+      <rect class={classes.bottom} width="80" height="10" x="10" y="65" rx="5"
+      ></rect>
+    </svg>
+  </button>
+  <nav id="navigation-main" class={classes["nav-main"]}>
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/about">About</HeaderLink>
+    <HeaderLink href="/archive">Archive</HeaderLink>
+  </nav>
+</header>
+<nav id="navigation-mobile" class={classes["nav-mobile"]}>
+  <div class={classes["nav-mobile-items"]}>
+    <HeaderLink tabindex={0} href="/">Home</HeaderLink>
+    <HeaderLink tabindex={0} href="/about">About</HeaderLink>
+    <HeaderLink tabindex={0} href="/archive">Archive</HeaderLink>
+  </div>
+</nav>
+
+<style>
+  /* This won't work as an imported style for 
+  some reason I don't understand yet */
+  #navigation-mobile.expanded {
+    display: block;
+    transform: translateX(0) translateY(0);
+  }
+</style>

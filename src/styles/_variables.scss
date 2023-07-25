@@ -13,3 +13,6 @@ $color-accent-hover: color.scale($color: $color-accent-primary, $lightness: 50%)
 // Breakpoints
 $bp-tablet: 835px;
 $bp-mobile: 430px;
+
+// Animations
+$animation-length: 200ms;

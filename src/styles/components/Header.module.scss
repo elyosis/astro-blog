@@ -1,39 +1,115 @@
 @use "../_variables.scss";
+@use "../mixins";
 
-	.header {
-		margin: 2rem;
-		margin-bottom: 4rem;
-		padding: 2rem;
-		border-radius: 25px;
-		box-shadow: 0px 0px 15px variables.$color-accent-primary;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		background: linear-gradient(153deg, rgba(206,211,215,0.9261905445772058) 0%, rgba(228,186,190,0.9878151944371498) 100%, transparent), variables.$color-accent-secondary;
-		color: variables.$color-main-dark;
+.header {
+  margin: 2rem;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0px 0px 15px variables.$color-accent-primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+      153deg,
+      rgba(206, 211, 215, 0.9261905445772058) 0%,
+      rgba(228, 186, 190, 0.9878151944371498) 100%,
+      transparent
+    ),
+    variables.$color-accent-secondary;
+  color: variables.$color-main-dark;
 
-		&-title {
-			font-weight: 800;
-			margin: 0.5em 0;
-		}
-	}
+  &-title {
+    font-weight: 800;
+    margin: 0.5em 0;
+  }
 
-	.nav {
-		display: flex;
-		justify-content: space-around;
-		gap: 2rem;
+  @media (max-width: variables.$bp-tablet) {
+    margin: 0;
+    border-radius: 0;
+  }
+}
 
-		a {
-			text: {
-				decoration: none;
-				transform: uppercase;
-			}
-			color: variables.$color-main-dark;
-			padding: 5px 10px;
+.nav-main {
+  @include mixins.nav-items(
+      $direction: row,
+      $justify: space-around,
+      $font-size: 1rem
+    );
 
-			 &:hover {
-				background-color: variables.$color-accent-hover;
-				border-radius: 7px;
-			 }
-		}
-	}
+    @media (max-width: variables.$bp-tablet) {
+    display: none;
+  }
+}
+
+.navigation-toggle {
+  display: none;
+
+  @media (max-width: variables.$bp-tablet) {
+    display: flex;
+    width: 4rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+  }
+
+  rect {
+    transition: y variables.$animation-length ease-in
+        variables.$animation-length,
+      rotate variables.$animation-length ease-in,
+      opacity 0ms variables.$animation-length;
+    transform-origin: center;
+  }
+
+  &[aria-expanded="true"] rect {
+    transition: y variables.$animation-length ease-in,
+      rotate variables.$animation-length ease-in variables.$animation-length,
+      opacity 0ms variables.$animation-length;
+  }
+
+  &[aria-expanded="true"] :is(.top, .bottom) {
+    y: 45px;
+  }
+
+  &[aria-expanded="true"] .top {
+    rotate: 45deg;
+  }
+
+  &[aria-expanded="true"] .middle {
+    opacity: 0;
+  }
+
+  &[aria-expanded="true"] .bottom {
+    rotate: -45deg;
+  }
+}
+
+.nav-mobile {
+  @media (min-width: variables.$bp-tablet) {
+    display: none;
+  }
+
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 500ms ease;
+  background-color: rgba(206, 211, 215, 0.8);
+  backdrop-filter: blur(10px);
+  width: 70%;
+  height: 100vh;
+
+  &-items {
+    height: 100%;
+    align-items: center;
+    @include mixins.nav-items(
+      $direction: column,
+      $justify: center,
+      $font-size: 3rem
+    );
+  }
+}
