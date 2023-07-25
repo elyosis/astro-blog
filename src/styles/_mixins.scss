@@ -1,3 +1,5 @@
+@use "./variables";
+
 @mixin base-layout() {
   padding: 2rem 4rem;
   display: flex;
@@ -10,4 +12,26 @@
   font-size: 1.1rem;
   text-align: justify;
   max-width: 75rem;
+}
+
+@mixin nav-items($direction, $justify, $font-size) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  gap: 2rem;
+
+  a {
+    text: {
+      decoration: none;
+      transform: uppercase;
+    }
+    font-size: $font-size;
+    color: variables.$color-main-dark;
+    padding: 5px 10px;
+
+    &:hover {
+      background-color: variables.$color-accent-hover;
+      border-radius: 7px;
+    }
+  }
 }
