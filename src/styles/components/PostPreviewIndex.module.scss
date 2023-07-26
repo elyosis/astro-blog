@@ -5,7 +5,6 @@
     font-size: 1.1rem;
     padding: 1.5rem;
     margin: 2rem;
-    width: 70%;
     background-color: variables.$color-secondary-dark;
     border: 3px solid variables.$color-accent-secondary;
     border-radius: 25px;
@@ -14,6 +13,12 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @media (max-width: variables.$bp-tablet) {
+      flex-direction: column;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
 
     p {
       margin-block: 0.5rem;
@@ -29,11 +34,19 @@
     margin: 0;
     padding-block: 0;
     color: variables.$color-accent-primary;
+
+    @media (max-width: variables.$bp-tablet) {
+      font-size: 1.5rem;
+    }
   }
 
   &info {
     flex: 3 1 0;
     margin-left: 1rem;
+
+    @media (max-width: variables.$bp-tablet) {
+      margin-left: auto;
+    }
 
     time {
       font-style: italic;
@@ -48,11 +61,18 @@
     }
     
     img {
+      width: 300px;
       min-width: 225px;
       display: block;
-      border-radius: 5px;
+      border-radius: 15px;
       aspect-ratio: 4 / 3;
       object-fit: cover;
+
+      @media (max-width: variables.$bp-tablet) {
+        width: auto;
+        min-width: none;
+        aspect-ratio: 16/9;
+      }
     }
   }
 

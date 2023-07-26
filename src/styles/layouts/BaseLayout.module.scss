@@ -1,7 +1,13 @@
 @use "../_mixins";
+@use "../variables";
 
 .main-home {
   @include mixins.base-layout;
+
+  @media (max-width: variables.$bp-tablet) {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
 }
 
 .main-archive {
