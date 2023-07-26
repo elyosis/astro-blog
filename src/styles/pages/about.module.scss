@@ -4,11 +4,32 @@
 .about {
   @include mixins.main-text;
 
+  @media (max-width: variables.$bp-tablet) {
+    margin: auto 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: variables.$bp-mobile) {
+    margin: auto 0;
+  }
+
   img {
-    margin: 2.5rem;
+    width: 300;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin: 2rem;
+    margin-left: 0;
     border: 5px solid variables.$color-accent-secondary;
     border-radius: 50%;
 		box-shadow: 0px 0px 15px variables.$color-accent-primary;
     float: left;
+
+    @media (max-width: variables.$bp-tablet) {
+      width: auto;
+      float: none;
+      margin: 1rem;
+    }
   }
 }
