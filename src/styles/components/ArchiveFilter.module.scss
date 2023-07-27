@@ -2,14 +2,19 @@
 
 .archive-container {
   width: 70%;
-  margin-bottom: 3rem;
+  // margin-bottom: 3rem;
   border-radius: 25px;
   display: grid;
   gap: 2rem;
-  grid-template-areas: "heading"
-                       "tags"
-                       "posts"
-                       "posts";
+  grid-template-areas:
+    "heading"
+    "tags"
+    "posts"
+    "posts";
+
+  @media (max-width: variables.$bp-tablet) {
+    width: 100%;
+  }
 }
 
 .archive-dropdown {
@@ -21,14 +26,14 @@
   padding: 0.2rem 1.3rem;
   border-radius: 25px 25px 0 0;
   box-shadow: 0 0px 10px 3px variables.$color-accent-secondary;
-  
+
   h2 {
     grid-area: "heading";
   }
 
   button {
     border: none;
-    background-color: inherit;
+    background-color: transparent;
     cursor: pointer;
   }
 
@@ -37,7 +42,6 @@
     transition: all 0.3s ease;
   }
 }
-
 
 .archive-tag-list {
   background-color: variables.$color-secondary-dark;
