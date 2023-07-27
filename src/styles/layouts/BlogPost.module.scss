@@ -3,15 +3,23 @@
 
 article {
   @include mixins.main-text;
+
+  @media (max-width: variables.$bp-tablet) {
+    margin: 0;
+  }
 }
 
 .post- {
   &title {
     color: variables.$color-accent-primary;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     margin-block: 0.2rem;
     text-align: start;
     line-height: normal;
+
+    @media (max-width: variables.$bp-mobile) {
+      font-size: 2rem;
+    }
   }
 
   &date {
