@@ -18,7 +18,7 @@ body {
 	font-family: 'Sarabun', sans-serif;
 	height: 100%;
 	display: grid;
-	grid-template-rows: 2fr 9fr minmax(max-content, auto);
+	grid-template-rows: minmax(max-content, auto) 1fr minmax(max-content, auto);
 	align-items: center;
 	margin: 0;
 	background-color: variables.$color-main-dark;
