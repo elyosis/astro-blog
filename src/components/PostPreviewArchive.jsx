@@ -6,7 +6,7 @@ const PostPreviewArchive = (props) => {
       <img src={props.heroImage} />
       <h4>{props.title}</h4>
       <button type="button">
-        <a href={`/posts/${props.slug}`}>Read entry</a>
+        <a href={`/posts/${props.slug}`} tabIndex={0}>Read entry</a>
       </button>
     </div>
   );

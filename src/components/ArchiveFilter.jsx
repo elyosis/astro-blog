@@ -60,6 +60,7 @@ const ArchiveFilter = (props) => {
             className={`fa-solid fa-angle-down fa-2xl ${
               isVisible ? `fa-flip-vertical` : ""
             }`}
+            tabIndex={0}
           ></i>
         </button>
       </div>

@@ -11,6 +11,7 @@ const ArchiveTag = (props) => {
       onClick={() => {
         props.onFilter(props.name);
       }}
+      tabIndex={0}
     >
       {props.name}
     </button>
