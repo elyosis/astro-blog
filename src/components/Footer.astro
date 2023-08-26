@@ -1,8 +1,14 @@
 ---
 import classes from "../styles/components/Footer.module.scss";
-const today = new Date();
 ---
 
 <footer class={classes.footer}>
-	&copy; {today.getFullYear()} <a href="https://github.com/elyosis/astro-blog" tabindex={0}>elyosis</a>. All rights reserved.
+	<div class={classes["footer-links"]}>
+		<a href="https://github.com/elyosis/astro-blog" tabindex={0}
+    ><i class="fa-brands fa-square-github fa-xl"></i> <span>GitHub</span></a
+		>
+		<a href="/rss.xml" tabindex={0}
+    ><i class="fa-solid fa-square-rss fa-xl"></i> <span>RSS</span></a
+		>
+	</div>
 </footer>

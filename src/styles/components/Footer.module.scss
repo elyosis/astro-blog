@@ -1,15 +1,25 @@
 @use "../_variables.scss";
 
-	.footer {
-		background-color: variables.$color-accent-secondary;
-		color: variables.$color-main-dark;
-		padding: 25px;
-		margin: 0;
-		box-shadow: 0 0 15px variables.$color-accent-secondary;
-		text-align: center;
-		align-self: stretch;
+.footer {
+  background-color: variables.$color-accent-secondary;
+  color: variables.$color-main-dark;
+  padding: 25px;
+  margin: 0;
+  box-shadow: 0 0 15px variables.$color-accent-secondary;
+  text-align: center;
 
-		a {
-			color: variables.$color-main-dark;
+  a {
+    color: variables.$color-main-dark;
+    text-decoration: none;
+
+		span:hover {
+			text-decoration: underline;
 		}
-	}
+  }
+
+  &-links {
+    display: flex;
+		justify-content: center;
+    gap: 1.5rem;
+  }
+}
