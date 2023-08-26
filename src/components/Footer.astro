@@ -3,12 +3,14 @@ import classes from "../styles/components/Footer.module.scss";
 ---
 
 <footer class={classes.footer}>
-	<div class={classes["footer-links"]}>
-		<a href="https://github.com/elyosis/astro-blog" tabindex={0}
-    ><i class="fa-brands fa-square-github fa-xl"></i> <span>GitHub</span></a
-		>
-		<a href="/rss.xml" tabindex={0}
-    ><i class="fa-solid fa-square-rss fa-xl"></i> <span>RSS</span></a
-		>
-	</div>
+  <div class={classes["footer-links"]}>
+    <a href="https://github.com/elyosis/astro-blog" tabindex={0}
+      ><i class="fa-brands fa-square-github fa-xl" aria-hidden="true"></i>
+      <span>GitHub</span></a
+    >
+    <a href="/rss.xml" tabindex={0}
+      ><i class="fa-solid fa-square-rss fa-xl" aria-hidden="true"></i>
+      <span>RSS</span></a
+    >
+  </div>
 </footer>
