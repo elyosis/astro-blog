@@ -12,14 +12,30 @@
     color: variables.$color-main-dark;
     text-decoration: none;
 
-		span:hover {
-			text-decoration: underline;
-		}
+    span {
+      position: relative;
+    }
+
+    span::after {
+      content: "";
+      background: variables.$color-main-dark;
+      height: 1.4px;
+      width: 100%;
+      left: 0;
+      bottom: -0.2rem;
+      position: absolute;
+      scale: 0 1;
+      transition: scale 350ms;
+    }
+
+    span:hover::after {
+      scale: 1 1;
+    }
   }
 
   &-links {
     display: flex;
-		justify-content: center;
+    justify-content: center;
     gap: 1.5rem;
   }
 }
