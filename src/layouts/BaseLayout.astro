@@ -16,7 +16,7 @@ const pathname: string = Astro.url.pathname;
   <body>
     <Header />
     <main
-      class={pathname === "/archive"
+      class={pathname === "/astro-blog/archive"
         ? classes["main-archive"]
         : classes["main-home"]}
     >

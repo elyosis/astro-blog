@@ -4,7 +4,6 @@ const ArchiveTag = (props) => {
   return (
     <button
       type="button"
-      // className={classes.tag}
       className={`${classes.tag} ${
         props.name === props.filteredTag ? classes.active : ""
       }`}
